@@ -3,73 +3,68 @@
 <head>
     <title>Buy Products from [Your Channel Name]</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 50px;
-            background-color: #f9f9f9;
-        }
-        .product-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .product {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .product-details {
-            display: flex;
-            align-items: center;
-            gap: 20px; /* Creates space between the product name and the button */
-            flex: 1;
-        }
-        .product-name {
-            font-size: 18px;
-            color: #333;
-            margin-right: 10px;
-            flex-shrink: 0; /* Ensures that the title doesn't shrink */
-        }
-        .buy-button {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            white-space: nowrap;
-        }
-        .buy-button:hover {
-            background-color: #218838;
-        }
-        .product-image {
-            width: 100px;
-            height: auto;
-            margin-right: 20px;
-        }
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .product {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .product-image {
-                margin-bottom: 10px;
-            }
-            .product-details {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .buy-button {
-                margin-top: 10px;
-                width: 100%;
-                text-align: center;
-            }
-        }
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Space between content */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    height: 100%; /* Allow card to take full height available */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.product-name {
+    font-size: 14px;
+    margin: 10px 0;
+    overflow-wrap: break-word; /* Breaks long words */
+    flex-grow: 1; /* Allow product name to grow */
+    line-height: 1.5; /* Better spacing */
+}
+
+.buy-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer; /* Pointer on hover */
+    align-self: flex-start; /* Align button to start of card */
+     display:block;
+}
+
+.buy-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
     </style>
 </head>
 <body>
